@@ -12,6 +12,7 @@ let boxImg;
 let bkgImg;
 var contador;
 var contar;
+var matter;
 
 function preload() {
   dotImg = loadImage('ball.png');
