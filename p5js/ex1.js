@@ -44,6 +44,8 @@ var G;
 var npower = 2;
 var contador;
 var contar;
+var contador1;
+var contar1;
 let img;
 
 
@@ -58,6 +60,7 @@ function mousePressed() {
   yhistory = [];
 
   contar = true;
+  contar1 = true;
 }
 
 function drawSlingshot() {
@@ -84,6 +87,7 @@ function mouseReleased() {
   y = height-poy;
   // contagem é falso novamente e o contador é redefinido
   contar = false;
+  contar1 = false;
 
 }
 
@@ -95,6 +99,8 @@ function setup(){
     createCanvas(750, 500);
     contador = 0;
   contar = false;
+  contador1 = 0;
+contar1 = false;
   img = loadImage('nnewton.jpg');
     G *= pow(150,npower-2);
 }
@@ -131,13 +137,20 @@ function display() {
   stroke(0);
   strokeWeight(4);
     text("Acelaração : " + contador,0.03*width,0.03*height+25);
-    fill(242, 111, 24);
-    stroke(0);
-    text("Forca : " + contador,0.03*width,0.03*height+70);
-    if (frameCount % 10 != 0 && contar) {
+    if (frameCount % 10 != 9 && contar) {
 
     //aumenta o valor do contador
     contador++;
+  //  fill(204,0,204);
+//    text("Acceleration",0.8*width,0.8*height+75);
+    }
+    fill(242, 111, 24);
+    stroke(0);
+    text("Forca : " + contador1,0.03*width,0.03*height+70);
+    if (frameCount % 2 != 0 && contar1) {
+
+    //aumenta o valor do contador
+    contador1++;
   //  fill(204,0,204);
 //    text("Acceleration",0.8*width,0.8*height+75);
     }
