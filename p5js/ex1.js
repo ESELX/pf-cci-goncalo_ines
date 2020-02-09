@@ -11,25 +11,25 @@ mass = 3.0;
 dt = 0.1;
 
 function draw(){
-    // Update velocities
+    // Atualizar velocidades
     vx += deltaVx;
   	vy += deltaVy;
 
-    // Update location
+    // Atualizar local
     x += vx*dt;
   	y += vy*dt;
 
-    // velocity is unchanged if there are no forces
+    // a velocidade é inalterada se não houver forças
     deltaVx = 0;
   	deltaVy = 0;
 
-    // This will clear the screen and re-draw it
+    // Isso limpará a tela e a desenhará novamente
     display();
 
-    // Add more graphics here before the end of draw()
+    // Adicione mais gráficos aqui antes do final do sorteio ()
     drawBlob(x,y,vx,vy,0,0);
 
-} // end draw()
+} // fim de desneho ()
 
 var pox;
 var poy;
@@ -105,14 +105,14 @@ contar1 = false;
     G *= pow(150,npower-2);
 }
 
-// Size of the ship
+
 var r = 12;
 
 var showarrows = true;
 
 iterations = 0;
 
-// Draw the ship and other stuff
+
 function display() {
  //   wrapEdges();
     background(255);
@@ -122,7 +122,7 @@ function display() {
 
 //    stroke(0);
     strokeWeight(10);
-//    println("lets do this");
+
     var tri_width=7;
     if (showarrows) {
             var x_line=5;
@@ -156,12 +156,12 @@ function display() {
     }
     }
 
- //   ship(x,y,vx,vy,deltaVx/dt,deltaVy/dt,theta);
+
 	  stroke(0);
     fill(0);
   	strokeWeight(0);
     textSize(12);
-//    text("left right arrows to turn, tap up arrow to thrust, press H to hide the arrows, press U to un-hide",10,10);
+
 
       if (iterations%3 == 1) {
     append(xhistory,x);
@@ -231,25 +231,25 @@ function drawBlob( _x,  _y, _vx, _vy, _Fx, _Fy){
             strokeWeight(10);
     var tri_width=7;
 
-    // Draw velocity arrow
+// Desenhar seta de velocidade
     var v_scaling=5.0;
-    stroke(255,0,0); // makes the line red
-    strokeWeight(3); // makes the line thicker
+    stroke(255,0,0); //torna a linha vermelha
+    strokeWeight(3); // torna a linha mais grossa
 
     if ( ((_vx !== 0) || (_vy !== 0)) && showarrows) {
         drawLine(_x,_y,_x+v_scaling*_vx,_y+v_scaling*_vy);
         var vel_angle = -atan2(_vy,_vx);
-        fill(255,0,0); // makes the triangle red
+        fill(255,0,0); // faz o triângulo veremelho
         drawTriangle(_x+v_scaling*_vx+sin(vel_angle)*tri_width/2,_y+v_scaling*_vy+cos(vel_angle)*tri_width/2,_x+v_scaling*_vx-sin(vel_angle)*tri_width/2,_y+v_scaling*_vy-cos(vel_angle)*tri_width/2,_x+v_scaling*_vx+cos(vel_angle)*10,_y+v_scaling*_vy-sin(vel_angle)*10);
     }
 
     var a_scaling=2;
     f_angle = -atan2(_Fy,_Fx);
     if (((_Fx !== 0) || (_Fy !== 0)) && showarrows) {
-    //stroke(204,0,204); // makes the line purple
+    stroke(204,0,204); // torna a linha roxa
     stroke(0,0,255); // blue
     drawLine(_x,_y,_x+a_scaling*_Fx,_y+a_scaling*_Fy);
-    //fill(204,0,204); // makes the triangle purple
+    fill(204,0,204); // torna o triângulo roxo
     fill(0,0,255); // blue
     drawTriangle(_x+a_scaling*_Fx+sin(f_angle)*tri_width/2,_y+a_scaling*_Fy+cos(f_angle)*tri_width/2,_x+a_scaling*_Fx-sin(f_angle)*tri_width/2,_y+a_scaling*_Fy-cos(f_angle)*tri_width/2,_x+a_scaling*_Fx+cos(f_angle)*10,_y+a_scaling*_Fy-sin(f_angle)*10);
     }
