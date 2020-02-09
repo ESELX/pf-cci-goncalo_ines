@@ -28,8 +28,9 @@ function draw(){
 
     // Add more graphics here before the end of draw()
     drawBlob(x,y,vx,vy,0,0);
+
 textSize(32);
-text("Força e Aceleração", width/4, height/8);
+text("Clica e arrasta o rato para lançares a bola!", width/2-300, height/20);
 } // end draw()
 
 var pox;
