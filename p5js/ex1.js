@@ -246,17 +246,17 @@ function drawBlob( _x,  _y, _vx, _vy, _Fx, _Fy){
     var a_scaling=2;
     f_angle = -atan2(_Fy,_Fx);
     if (((_Fx !== 0) || (_Fy !== 0)) && showarrows) {
-    stroke(204,0,204); // torna a linha roxa
+    //stroke(204,0,204); // torna a linha roxa
     stroke(0,0,255); // blue
     drawLine(_x,_y,_x+a_scaling*_Fx,_y+a_scaling*_Fy);
-    fill(204,0,204); // torna o triângulo roxo
-    fill(0,0,255); // blue
+    //fill(204,0,204); // torna o triângulo roxo
+    fill(0,0,255); // azul
     drawTriangle(_x+a_scaling*_Fx+sin(f_angle)*tri_width/2,_y+a_scaling*_Fy+cos(f_angle)*tri_width/2,_x+a_scaling*_Fx-sin(f_angle)*tri_width/2,_y+a_scaling*_Fy-cos(f_angle)*tri_width/2,_x+a_scaling*_Fx+cos(f_angle)*10,_y+a_scaling*_Fy-sin(f_angle)*10);
     }
 
 
-      fill(0,0,0); //If more text is written elsewhere make sure the default is black
-    stroke(0,0,0); // If more lines are drawn elsewhere make sure the default is black
+      fill(0,0,0); //se mais texto for escrito noutro lugar, verificar que tem  o mesmo padrão é preto
+    stroke(0,0,0); // se mais linhas forem desenhadas, verificar se tem o mesmo padrão que é preto
     strokeWeight(0);
 
 }
@@ -274,7 +274,7 @@ function ship( _x,  _y, _vx, _vy, _ax, _ay, _theta)
     translate(_x,height-_y);
     rotate(-theta+PI/2);
     fill(175);
-    // A triangle
+    // um triângulo
     beginShape();
     vertex(-r,r);
     vertex(0,-1.5*r);
@@ -290,19 +290,19 @@ function ship( _x,  _y, _vx, _vy, _ax, _ay, _theta)
     strokeWeight(10);
     var tri_width=7;
 
-    // Draw velocity arrow
+    // desenhar a seta de velocidade
     var v_scaling=1.0;
-    stroke(255,0,0); // makes the line red
-    strokeWeight(3); // makes the line thicker
+    stroke(255,0,0); // torna a linha vermelha
+    strokeWeight(3); // trona a linha grossa
 
     if ( ((_vx !== 0) || (_vy !== 0)) && showarrows) {
         drawLine(_x,_y,_x+v_scaling*_vx,_y+v_scaling*_vy);
         var vel_angle = -atan2(_vy,_vx);
-        fill(255,0,0); // makes the triangle red
+        fill(255,0,0); // torna o trânhulo vermelho
         drawTriangle(_x+v_scaling*_vx+sin(vel_angle)*tri_width/2,_y+v_scaling*_vy+cos(vel_angle)*tri_width/2,_x+v_scaling*_vx-sin(vel_angle)*tri_width/2,_y+v_scaling*_vy-cos(vel_angle)*tri_width/2,_x+v_scaling*_vx+cos(vel_angle)*10,_y+v_scaling*_vy-sin(vel_angle)*10);
     }
 
-     // Draw force arrow
+     // desenhar a seta de força
     var f_scaling=2.25;
 //    var f_scaling=5.0;
     var Fx = mass*_ax;
@@ -311,26 +311,26 @@ function ship( _x,  _y, _vx, _vy, _ax, _ay, _theta)
 
     if (((Fx !== 0) || (Fy !== 0)) && showarrows) {
 //    if (((Fx != 0) || (Fy != 0)) && 0 ) {
-    stroke(0,0,255); // makes the line blue
+    stroke(0,0,255); // torna a linha azul
     drawLine(_x,_y,_x+f_scaling*Fx,_y+f_scaling*Fy);
-    fill(0,0,255); // makes the triangle blue
+    fill(0,0,255); // torna o trângulo azul
     drawTriangle(_x+f_scaling*Fx+sin(f_angle)*tri_width/2,_y+f_scaling*Fy+cos(f_angle)*tri_width/2,_x+f_scaling*Fx-sin(f_angle)*tri_width/2,_y+f_scaling*Fy-cos(f_angle)*tri_width/2,_x+f_scaling*Fx+cos(f_angle)*10,_y+f_scaling*Fy-sin(f_angle)*10);
     }
 
     var a_scaling=2.25;
     f_angle = -atan2(_ay,_ax);
     if (((_ax !== 0) || (_ay !== 0)) && showarrows) {
-    stroke(204,0,204); // makes the line purple
+    stroke(204,0,204); // torna a linha roxa
     drawLine(_x,_y,_x+a_scaling*_ax,_y+a_scaling*_ay);
-    fill(204,0,204); // makes the triangle purple
+    fill(204,0,204); //torna o trângulo roxo
     drawTriangle(_x+a_scaling*_ax+sin(f_angle)*tri_width/2,_y+a_scaling*_ay+cos(f_angle)*tri_width/2,_x+a_scaling*_ax-sin(f_angle)*tri_width/2,_y+a_scaling*_ay-cos(f_angle)*tri_width/2,_x+a_scaling*_ax+cos(f_angle)*10,_y+a_scaling*_ay-sin(f_angle)*10);
     }
 
 
 
 
-      fill(0,0,0); //If more text is written elsewhere make sure the default is black
-    stroke(0,0,0); // If more lines are drawn elsewhere make sure the default is black
+      fill(0,0,0); // se mais texto for escrito noutro lugar, verificar se o padrão é preto
+    stroke(0,0,0); // se mais linhas forem desenhadas noutro lugar, verificar se o padrão é preto
     strokeWeight(0);
 
 }
@@ -399,39 +399,39 @@ function drawSun( _x,  _y, _vx, _vy, _Fx, _Fy){
     strokeWeight(2);
     //    fill(255);
     //noFill();
-    fill(255,255,0); //yellow
+    fill(255,255,0); //amarelo
     stroke(0);
     ellipse(_x, height - _y, 50, 50);
 
             strokeWeight(10);
     var tri_width=7;
 
-    // Draw velocity arrow
+    // desenhar seta de velocidade
     var v_scaling=5.0;
-    stroke(255,0,0); // makes the line red
-    strokeWeight(3); // makes the line thicker
+    stroke(255,0,0); // torna a linha vermelha
+    strokeWeight(3); // torna a linha mais grossa
 
     if ( ((_vx !== 0) || (_vy !== 0)) && showarrows) {
         drawLine(_x,_y,_x+v_scaling*_vx,_y+v_scaling*_vy);
         var vel_angle = -atan2(_vy,_vx);
-        fill(255,0,0); // makes the triangle red
+        fill(255,0,0); // torna o trângulo vermelho
         drawTriangle(_x+v_scaling*_vx+sin(vel_angle)*tri_width/2,_y+v_scaling*_vy+cos(vel_angle)*tri_width/2,_x+v_scaling*_vx-sin(vel_angle)*tri_width/2,_y+v_scaling*_vy-cos(vel_angle)*tri_width/2,_x+v_scaling*_vx+cos(vel_angle)*10,_y+v_scaling*_vy-sin(vel_angle)*10);
     }
 
     var a_scaling=2;
     f_angle = -atan2(_Fy,_Fx);
     if (((_Fx !== 0) || (_Fy !== 0)) && showarrows) {
-    //stroke(204,0,204); // makes the line purple
-    stroke(0,0,255); // blue
+    //stroke(204,0,204); // torna a linha roxa
+    stroke(0,0,255); // azul
     drawLine(_x,_y,_x+a_scaling*_Fx,_y+a_scaling*_Fy);
-    //fill(204,0,204); // makes the triangle purple
+    //fill(204,0,204); // torna o trângulo roxo
     fill(0,0,255);
     drawTriangle(_x+a_scaling*_Fx+sin(f_angle)*tri_width/2,_y+a_scaling*_Fy+cos(f_angle)*tri_width/2,_x+a_scaling*_Fx-sin(f_angle)*tri_width/2,_y+a_scaling*_Fy-cos(f_angle)*tri_width/2,_x+a_scaling*_Fx+cos(f_angle)*10,_y+a_scaling*_Fy-sin(f_angle)*10);
     }
 
 
-      fill(0,0,0); //If more text is written elsewhere make sure the default is black
-    stroke(0,0,0); // If more lines are drawn elsewhere make sure the default is black
+      fill(0,0,0); //se mais texto for escrito noutro lugar, verificar que o padrão é preto
+    stroke(0,0,0); //se mais linhas foram desenhadas noutro lugar, verificar que o padrão é preto
     strokeWeight(0);
 
 
