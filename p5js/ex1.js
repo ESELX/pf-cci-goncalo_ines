@@ -118,9 +118,9 @@ function display() {
     textSize(20);
     strokeWeight(0);
     fill(255,0,0);
-    text("Velocity",0.03*width,0.03*height+25);
+    text("Acelaração",0.03*width,0.03*height+25);
     fill(0,0,255);
-    text("Force",0.03*width,0.03*height+50);
+    text("Forca",0.03*width,0.03*height+50);
   //  fill(204,0,204);
 //    text("Acceleration",0.8*width,0.8*height+75);
     }
