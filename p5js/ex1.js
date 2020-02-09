@@ -28,7 +28,8 @@ function draw(){
 
     // Add more graphics here before the end of draw()
     drawBlob(x,y,vx,vy,0,0);
-
+textSize(32);
+text("Força e Aceleração", width/4, height/8);
 } // end draw()
 
 var pox;
@@ -198,7 +199,6 @@ function display() {
     	tooclose = false;
       tooclosetimer = 0;
     }
-
 
 
 
