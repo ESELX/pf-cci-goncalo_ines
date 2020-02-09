@@ -29,7 +29,12 @@ function draw(){
     // Adicione mais gráficos aqui antes do final do sorteio ()
     drawBlob(x,y,vx,vy,0,0);
 
-} // fim de desneho ()
+textSize(32);
+fill(40, 235, 173);
+stroke(0);
+strokeWeight(4);
+text("Clica e arrasta o rato para lançares a bola!", width/2-300, height/20);
+} // end draw()
 
 var pox;
 var poy;
@@ -198,7 +203,6 @@ function display() {
     	tooclose = false;
       tooclosetimer = 0;
     }
-
 
 
 
