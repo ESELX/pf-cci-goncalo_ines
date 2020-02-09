@@ -96,7 +96,7 @@ yhistory = [];
 
 
 function setup(){
-    createCanvas(750, 500);
+    createCanvas(1900, 1900);
     contador = 0;
   contar = false;
   contador1 = 0;
