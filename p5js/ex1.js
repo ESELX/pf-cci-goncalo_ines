@@ -44,6 +44,7 @@ var G;
 var npower = 2;
 let img;
 
+
 function mousePressed() {
   pox = mouseX;
   poy = mouseY;
@@ -85,7 +86,7 @@ yhistory = [];
 
 function setup(){
     createCanvas(750, 500);
-  img = loadImage("newton.jpg");
+  img = loadImage('nnewton.jpg');
     G *= pow(150,npower-2);
 }
 
