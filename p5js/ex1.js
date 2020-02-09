@@ -115,15 +115,15 @@ function display() {
     }
 
     if (showarrows) {
-    textSize(20);
+    textSize(30);
     strokeWeight(0);
-    fill(255,0,0);
+    fill(237, 205, 43);
   stroke(0);
   strokeWeight(4);
     text("Acelaração",0.03*width,0.03*height+25);
-    fill(0,0,255);
+    fill(242, 111, 24);
     stroke(0);
-    text("Forca",0.03*width,0.03*height+50);
+    text("Forca",0.03*width,0.03*height+70);
   //  fill(204,0,204);
 //    text("Acceleration",0.8*width,0.8*height+75);
     }
